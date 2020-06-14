@@ -1,6 +1,10 @@
 android {
-    buildToolsVersion "30.0.0"
-    compileSdkVersion 29
+//    buildToolsVersion "30.0.0"
+//    compileSdkVersion 29
+    buildToolsVersion "28.0.3"
+    compileSdkVersion 28
+
+
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
@@ -18,8 +22,10 @@ android {
     }
     defaultConfig {
         applicationId "jp.techacademy.drms.jumpactiongame"
-        minSdkVersion 14
-        targetSdkVersion 29
+        minSdkVersion 9  // ←9に変更する
+        targetSdkVersion 28
+//        minSdkVersion 14
+//        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
     }
@@ -90,3 +96,8 @@ task run(type: Exec) {
 }
 
 eclipse.project.name = appName + "-android"
+
+// 下記、追加する
+dependencies {
+    compile 'com.google.android.gms:play-services:6.+'
+}
